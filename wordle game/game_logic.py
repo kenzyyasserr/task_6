@@ -10,7 +10,7 @@ def guess_word():
     user_guess = input("guess the word: ")
     for n in range(6):
         if user_guess == selected_word:
-            print ("Congrats! you've guessed the right word in" + str(n+1) + " attempts")
+            print ("Congrats! you've guessed the right word in " + str(n+1) + " attempts")
             break
         else:
             print ("That's not correct please try again")
