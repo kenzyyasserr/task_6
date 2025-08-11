@@ -20,6 +20,6 @@ def guess_word():
             user_guess = input("guess the word: ")
             continue
     else:
-        print("you're out of attempts! The word was " + selected_word.upper())
+        print("you're out of attempts! The word was " + selected_word.lower())
 
 guess_word()
