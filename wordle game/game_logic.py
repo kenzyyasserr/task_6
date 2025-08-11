@@ -1,11 +1,14 @@
 # task 6.1: backend
+import random
 def guess_word():
-    import random
-    words_5 = ["beach", "ocean", "river", "paint", 
-               "happy", "drums", "radio", "tiger", 
-               "bread", "pixel", "paint", "drill", 
-               "truck", "shirt", "virus", "comet"]
-    selected_word = random.choice (words_5)
+
+    def load_words(words):
+        with open(words, "r") as f:
+            words = [word.strip().lower() for word in f if len(word.strip()) == 5]
+        
+        return words, set(words)
+    words, word_set = load_words("words.txt")
+    selected_word = random.choice (words)
     
     user_guess = input("guess the word: ")
     for n in range(6):
@@ -16,8 +19,7 @@ def guess_word():
             print ("That's not correct please try again")
             user_guess = input("guess the word: ")
             continue
+    else:
+        print("you're out of attempts! The word was " + selected_word.upper())
 
 guess_word()
-
-
-
