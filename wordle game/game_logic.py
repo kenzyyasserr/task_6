@@ -24,3 +24,6 @@ def guess_word():
     else:
         print("you're out of attempts! The word was " + selected_word)
 guess_word()
+
+# task 6.2 and task 6.3:
+grid = [["" for_in range(5)] for_in range(6)]
