@@ -1,5 +1,6 @@
 # task 6.1: backend
 import random
+score = 0
 def guess_word():
 
     def load_words(words):
@@ -8,6 +9,12 @@ def guess_word():
         
         return words, set(words)
     words, word_set = load_words("words.txt")
+    if user_guess.lower() in word_set:
+        print ("Your guess is accepted")
+    else:
+        print("Incorect guess")
+        score -=1
+
     selected_word = random.choice (words)
     
     user_guess = input("guess the word: ")
@@ -32,4 +39,4 @@ def guess_word():
     
     for i in range (4):
         if guess_list[i] == selected_list[i]:
-            
+
