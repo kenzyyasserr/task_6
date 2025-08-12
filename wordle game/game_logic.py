@@ -39,4 +39,9 @@ def guess_word():
     
     for i in range (4):
         if guess_list[i] == selected_list[i]:
+            print ("\033[92m" + guess_list[i] + "\033[0m")
+        elif guess_list[i] in selected_list:
+            print ("\033[93m" + guess_list[i] + "\033[0m")
+        else:
+            print("\033[90m" + guess_list[i] + "\033[0m")
 
