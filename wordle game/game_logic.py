@@ -11,7 +11,9 @@ def guess_word():
     selected_word = random.choice (words)
     
     user_guess = input("guess the word: ")
-    for n in range(6):
+    if len(user_guess) != 5:
+        user_guess = input ("The word must be 5 letters, please try again: ")
+    for n in range(5):
         if user_guess == selected_word:
             print ("Congrats! you've guessed the right word in " + str(n+1) + " attempts")
             break
@@ -20,6 +22,5 @@ def guess_word():
             user_guess = input("guess the word: ")
             continue
     else:
-        print("you're out of attempts! The word was " + selected_word.lower())
-
+        print("you're out of attempts! The word was " + selected_word)
 guess_word()
